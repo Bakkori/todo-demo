@@ -11,7 +11,7 @@ public class App
         try {
             DBConnection db = DBConnection.getInstance();
             // Insert
-            Task t = new Task("Do the laundry.", false, "Abubaker Mohammed");
+            Task t = new Task("Publish code on GitHub", true, "Abubaker Mohammed");
             t.insertTask();
             // Retrieve all tasks
             t.retrieveTasks();
