@@ -14,12 +14,13 @@ public class DBConnection{
     private static DBConnection instance;
 
     private DBConnection() throws SQLException {
+        String name = System.getenv("postname");
         String pass = System.getenv("post_pass");
         this.dbName = "tododb";
         this.port = 5433;
         this.url = "jdbc:postgresql://localhost:" + Integer.toString(this.port) + "/" + this.dbName;
         Properties props = new Properties();
-        props.setProperty("user","postgres");
+        props.setProperty("user",name);
         props.setProperty("password",pass);
         props.setProperty("ssl","false");
         this.connection = DriverManager.getConnection(url, props);
